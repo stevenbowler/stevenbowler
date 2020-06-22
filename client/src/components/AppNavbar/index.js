@@ -97,10 +97,11 @@ class AppNavbar extends Component {
      */
     resume = () => {
         console.log("handleResume");
-        window.location.href = "https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.jpg";
+        // window.location.href = "./StevenBowlerResume.jpg";
+        window.location.href = "https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.pdf";
     }
 
-
+    //https://github.com/stevenbowler/stevenbowler/tree/master/client/public
     /**
      * handle the About button event, show About.js page
      * @function tutorial
