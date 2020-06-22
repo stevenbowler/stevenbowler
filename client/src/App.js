@@ -19,6 +19,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Home from "./pages/Home";
 // import Nav from "./components/Nav";  // was in original Week 20 Activity 11
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -69,8 +72,10 @@ class App extends React.Component {
           <RegisterModal />
           <ExtraModal />
           <Switch>
-            <Route exact path="/" render={(props) => <Books {...props} />} />
+            <Route exact path="/" render={(props) => <Home {...props} />} />
             <Route exact path="/books" render={(props) => <Books {...props} />} />
+            <Route exact path="/contact" render={(props) => <Contact {...props} />} />
+            <Route exact path="/about" render={(props) => <About {...props} />} />
             <Route exact path="/books/:id" render={(props) => <Detail {...props} />} />
             <Route render={(props) => <NoMatch {...props} />} />
           </Switch>

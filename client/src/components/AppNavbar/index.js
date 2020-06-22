@@ -92,13 +92,33 @@ class AppNavbar extends Component {
     }
 
 
+    /**
+     * handle the About button event, show About.js page
+     * @function tutorial
+     */
+    contact = () => {
+        console.log("handleTutorial");
+        window.location.href = "/contact";
+    }
+
+
+    /**
+     * handle the About button event, show About.js page 
+     * @function about
+     */
+    about = () => {
+        console.log("handleTutorial");
+        window.location.href = "/about";
+    }
+
+
 
 
     render() {
         return (
             // <div> //removed to get sticky navbar with reactstrap https://github.com/reactstrap/reactstrap/issues/1179
             <Navbar color="dark" expand="sm" className="mb-5 sticky-top">
-                <NavbarBrand href="/">MERNshellTwo</NavbarBrand>
+                <NavbarBrand href="/">Steven Bowler</NavbarBrand>
                 <NavbarText className="text-warning" placeholder="test">{this.props.username}</ NavbarText>
                 <NavbarToggler color="dark" border="dark" onClick={this.toggleNavbar}><img src='/hamburger.jpg' alt='Menu' style={{
                     height: "40px",
@@ -109,12 +129,13 @@ class AppNavbar extends Component {
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.register}>Register</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.login}>Login</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? false : true} float="left" display="inline" onClick={this.logout}>Logout</Button>
-                        <Button color="dark" hidden={this.props.loggedIn === "true" ? false : true} float="left" display="inline" onClick={this.extraModal}>Modal</Button>
+                        <Button color="dark" float="left" display="inline" onClick={this.about}>About</Button>
+                        <Button color="dark" float="left" display="inline" onClick={this.contact}>Contact</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.tutorial}>Tutorial</Button>
                         {/* <Button float="left" display="inline" onClick={this.unused}>Unused</Button> */}
-                        <Button float="left" color="dark" display="inline" onClick={this.changeColor}>Color</Button>
+                        {/* <Button float="left" color="dark" display="inline" onClick={this.changeColor}>Color</Button> */}
                         <NavItem>
-                            <NavLink display="inline" color="white" href="https://github.com/stevenbowler/MERNshellTwo">GitHub</NavLink>
+                            <NavLink display="inline" color="white" href="https://github.com/stevenbowler/">GitHub</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
