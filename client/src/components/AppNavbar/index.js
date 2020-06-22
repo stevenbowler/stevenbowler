@@ -88,7 +88,16 @@ class AppNavbar extends Component {
      */
     tutorial = () => {
         console.log("handleTutorial");
-        window.location.href = "https://drive.google.com/file/d/1dXeXGydfJTvsE2GS7LnczJzTW0EKO-wS/view?usp=sharing";
+        window.location.href = "https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view";
+    }
+
+    /**
+     * handle the Tutorial button event, play the tutorial for this app
+     * @function tutorial
+     */
+    resume = () => {
+        console.log("handleResume");
+        window.location.href = "https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.jpg";
     }
 
 
@@ -97,7 +106,7 @@ class AppNavbar extends Component {
      * @function tutorial
      */
     contact = () => {
-        console.log("handleTutorial");
+        console.log("handleContact");
         window.location.href = "/contact";
     }
 
@@ -107,7 +116,7 @@ class AppNavbar extends Component {
      * @function about
      */
     about = () => {
-        console.log("handleTutorial");
+        console.log("handleAbout");
         window.location.href = "/about";
     }
 
@@ -129,6 +138,7 @@ class AppNavbar extends Component {
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.register}>Register</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.login}>Login</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? false : true} float="left" display="inline" onClick={this.logout}>Logout</Button>
+                        <Button color="dark" float="left" display="inline" onClick={this.resume}>Resume</Button>
                         <Button color="dark" float="left" display="inline" onClick={this.about}>About</Button>
                         <Button color="dark" float="left" display="inline" onClick={this.contact}>Contact</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.tutorial}>Tutorial</Button>
