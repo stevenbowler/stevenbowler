@@ -32,7 +32,7 @@ import RegisterModal from './components/RegisterModal';
 import LoginModal from './components/LoginModal';
 import ExtraModal from './components/ExtraModal';
 import { connect } from 'react-redux';
-import { resetUser } from './redux/actionCreator';
+import { resetUser, login } from './redux/actionCreator';
 
 
 
@@ -55,9 +55,17 @@ class App extends React.Component {
    * @function componentDidMount
    */
   componentDidMount() {
-    if (!sessionStorage["name"]) {
+    if (!localStorage["name"]) {
       this.props.dispatch(resetUser());    // on load, reset all user settings, only when not already set
-    } else console.log("sessionStorage.name already exists");
+    } else {
+      console.log("sessionStorage.name already exists");
+      this.props.dispatch(login({
+        username: localStorage.getItem("name"),
+        email: localStorage.getItem("email"),
+        token: localStorage.getItem("token"),
+        loggedIn: localStorage.getItem("loggedIn")
+      }));    // on load, reset all user settings, only when not already set
+    }
   }
 
   // getSnapshotBeforeUpdate(prevprops, prevstate) {}

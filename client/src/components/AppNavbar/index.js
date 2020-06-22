@@ -86,9 +86,10 @@ class AppNavbar extends Component {
      * handle the Tutorial button event, play the tutorial for this app
      * @function tutorial
      */
-    tutorial = () => {
+    features = () => {
         console.log("handleTutorial");
-        window.location.href = "https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view";
+        // window.location.href = "https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view";
+        window.open('https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view', '_blank');
     }
 
     /**
@@ -97,11 +98,9 @@ class AppNavbar extends Component {
      */
     resume = () => {
         console.log("handleResume");
-        // window.location.href = "./StevenBowlerResume.jpg";
-        window.location.href = "https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.pdf";
+        window.open('https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.pdf', '_blank');
     }
 
-    //https://github.com/stevenbowler/stevenbowler/tree/master/client/public
     /**
      * handle the About button event, show About.js page
      * @function tutorial
@@ -139,10 +138,10 @@ class AppNavbar extends Component {
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.register}>Register</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.login}>Login</Button>
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? false : true} float="left" display="inline" onClick={this.logout}>Logout</Button>
-                        <Button color="dark" float="left" display="inline" onClick={this.resume}>Resume</Button>
+                        <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.features}>Features</Button>
                         <Button color="dark" float="left" display="inline" onClick={this.about}>About</Button>
+                        <Button color="dark" float="left" display="inline" onClick={this.resume}>Resume</Button>
                         <Button color="dark" float="left" display="inline" onClick={this.contact}>Contact</Button>
-                        <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.tutorial}>Tutorial</Button>
                         {/* <Button float="left" display="inline" onClick={this.unused}>Unused</Button> */}
                         {/* <Button float="left" color="dark" display="inline" onClick={this.changeColor}>Color</Button> */}
                         <NavItem>

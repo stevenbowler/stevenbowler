@@ -6,10 +6,10 @@ import { cloneDeep } from 'lodash';
 
 const initialState = {
     value: { something: "something" },
-    username: sessionStorage.getItem("name"),
-    email: sessionStorage.getItem("email"),
-    token: sessionStorage.getItem("token"),
-    loggedIn: sessionStorage.getItem("loggedIn"),
+    username: localStorage.getItem("name"),
+    email: localStorage.getItem("email"),
+    token: localStorage.getItem("token"),
+    loggedIn: localStorage.getItem("loggedIn"),
     isOpenNavbar: false,
     isOpenExtraModal: false,
     isOpenLoginModal: false,
@@ -26,10 +26,10 @@ export const todoReducer = (state = initialState, action) => {
             newState.email = action.user.email;
             newState.token = action.user.token;
             newState.loggedIn = "true";
-            sessionStorage.setItem("token", newState.token);
-            sessionStorage.setItem("email", newState.email);
-            sessionStorage.setItem("name", newState.username);
-            sessionStorage.setItem("loggedIn", newState.loggedIn);
+            localStorage.setItem("token", newState.token);
+            localStorage.setItem("email", newState.email);
+            localStorage.setItem("name", newState.username);
+            localStorage.setItem("loggedIn", newState.loggedIn);
             newState.errorMessage = null;
             console.log("LOGIN_USER: ", newState.username);
             return newState;
@@ -58,10 +58,10 @@ export const todoReducer = (state = initialState, action) => {
             newState.email = "";
             newState.token = "";
             newState.loggedIn = "false";
-            sessionStorage.setItem("name", newState.username);
-            sessionStorage.setItem("email", newState.email);
-            sessionStorage.setItem("token", newState.token);
-            sessionStorage.setItem("loggedIn", "false");
+            localStorage.setItem("name", newState.username);
+            localStorage.setItem("email", newState.email);
+            localStorage.setItem("token", newState.token);
+            localStorage.setItem("loggedIn", "false");
             console.log("RESET_USER, is: ", newState.username);
             return newState;
 
