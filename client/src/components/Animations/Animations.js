@@ -83,9 +83,9 @@ class AnimateFadeIn extends Component {
                     {/* <h2>About Me</h2> */}
                     <section>
 
-                        <p ><strong> Best way to contact me is by text your name to 1-956-792-4128</strong></p>
-                        <p >Alternatively of course, you can call the same number.</p>
-                        <p > Or send an email to stevenbowler@yahoo.com</p>
+                        <p ><strong> Best way to contact me is to text your name to 1-956-792-4128</strong></p>
+                        <p >Alternatively of course, call the same number.</p>
+                        <p >Or send an email to stevenbowler@yahoo.com</p>
                         <p >It will be my pleasure to help you and your team reach your goals.</p>
                         <p >Sincerely, </p>
                         <p >Steven Bowler</p>
