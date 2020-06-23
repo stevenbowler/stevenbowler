@@ -55,10 +55,10 @@ class App extends React.Component {
    * @function componentDidMount
    */
   componentDidMount() {
-    if (!localStorage["name"]) {
+    if (!localStorage["name"] || localStorage.getItem("name") === "Guest...Login") {
       this.props.dispatch(resetUser());    // on load, reset all user settings, only when not already set
     } else {
-      console.log("sessionStorage.name already exists");
+      console.log("sessionStorage.name already exists and logged-in");
       this.props.dispatch(login({
         username: localStorage.getItem("name"),
         email: localStorage.getItem("email"),

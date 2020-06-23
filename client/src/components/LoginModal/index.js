@@ -43,7 +43,7 @@ class LoginModal extends Component {
      * @param {*} event
      */
     handleSubmit = (event) => {
-        // console.log("App.js handleSubmit logging in with: ", event.target.email.value);
+        // console.log("LoginModal handleSubmit logging in with: ", event.target.email.value);
         const data = {
             email: event.target.email.value,
             password: event.target.password.value

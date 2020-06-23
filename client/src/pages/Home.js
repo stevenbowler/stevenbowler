@@ -4,7 +4,13 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import { connect } from 'react-redux';
-import { Button } from "reactstrap";
+import {
+    AnimateWobble,
+    AnimateRotateInDownLeft,
+    AnimateRotateInDownRight
+}
+    from "../components/Animations/Animations";
+
 
 
 
@@ -12,36 +18,9 @@ import { Button } from "reactstrap";
  * handle the Tutorial button event, play the tutorial for this app
  * @function tutorial
  */
-const jigglereact = () => {
-    window.location.href = "https://jigglereact.herokuapp.com/";
-    // window.open('https://jigglereact.herokuapp.com/', '_blank');
-}
-
-/**
- * handle the Tutorial button event, play the tutorial for this app
- * @function tutorial
- */
-const clickyone = () => {
-    window.location.href = "https://clickyone.herokuapp.com/";
-    // window.open('https://clickyone.herokuapp.com/', '_blank');
-}
-
-/**
- * handle the Tutorial button event, play the tutorial for this app
- * @function tutorial
- */
-const googlebooksearch = () => {
-    window.location.href = "https://googlerbooksearch.herokuapp.com/";
-    // window.open('https://googlerbooksearch.herokuapp.com/', '_blank');
-}
-
-// /**
-//  * handle the Tutorial button event, play the tutorial for this app
-//  * @function testsite
-//  */
-// const stevenbowler = () => {
-//     window.location.href = "https://googlerbooksearch.herokuapp.com/";
-//     // window.open('https://googlerbooksearch.herokuapp.com/', '_blank');
+// const jigglereact = () => {
+//     // window.location.href = "https://jigglereact.herokuapp.com/";
+//     window.open('https://jigglereact.herokuapp.com/', '_blank');
 // }
 
 
@@ -49,24 +28,25 @@ const googlebooksearch = () => {
  * if route/resource not found display this page
  * @function NoMatch
  */
-function NoMatch() {
+function Home() {
     return (
         <Container fluid>
             <Row>
                 <Col size="md-12">
                     <Jumbotron>
-                        <h1>Home Page</h1>
-                        <h1>
+                        <h1>Problem Solved</h1>
+                        {/* <h1>
                             <span role="img" aria-label="Face With Rolling Eyes Emoji">
-                                🙄
-              </span>
-                        </h1>
+                                🙄</span>
+                        </h1> */}
                     </Jumbotron>
-                    <Jumbotron>
-                        <Button color="dark" float="left" display="inline" onClick={jigglereact}>Jiggle Game</Button>
-                        <Button color="dark" float="left" display="inline" onClick={clickyone}>Clicky Game</Button>
-                        <Button color="dark" float="left" display="inline" onClick={googlebooksearch}>Google Book Search</Button>
-                    </Jumbotron>
+                    <Container>
+                        <Row>
+                            <AnimateRotateInDownLeft href="https://jigglereact.herokuapp.com/" src="./hamburger.jpg">Google Book Search</AnimateRotateInDownLeft>
+                            <AnimateWobble href="https://clickyone.herokuapp.com/" src="./hamburger.jpg">Clicky Game</AnimateWobble>
+                            <AnimateRotateInDownRight href="https://googlerbooksearch.herokuapp.com/" src="./hamburger.jpg">Google Book Search</AnimateRotateInDownRight>
+                        </Row>
+                    </Container>
                 </Col>
             </Row>
         </Container>
@@ -81,5 +61,5 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(NoMatch);
+export default connect(mapStateToProps)(Home);
 // export default NoMatch;
