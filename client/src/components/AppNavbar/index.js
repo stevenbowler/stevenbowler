@@ -88,7 +88,7 @@ class AppNavbar extends Component {
      */
     features = () => {
         console.log("handleTutorial");
-        // window.location.href = "https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view";
+        // window.location.href = "https://www.linkedin.com/in/stevenbowler1";
         window.open('https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view', '_blank');
     }
 
@@ -99,6 +99,15 @@ class AppNavbar extends Component {
     resume = () => {
         console.log("handleResume");
         window.open('https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.pdf', '_blank');
+    }
+
+    /**
+     * handle the Tutorial button event, play the tutorial for this app
+     * @function tutorial
+     */
+    linkedin = () => {
+        console.log("handleResume");
+        window.open('https://www.linkedin.com/in/stevenbowler1', '_blank');
     }
 
     /**
@@ -120,7 +129,7 @@ class AppNavbar extends Component {
         window.location.href = "/about";
     }
 
-
+    //www.linkedin.com/in/stevenbowler1
 
 
     render() {
@@ -141,6 +150,7 @@ class AppNavbar extends Component {
                         <Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.features}>Features</Button>
                         <Button color="dark" float="left" display="inline" onClick={this.about}>About</Button>
                         <Button color="dark" float="left" display="inline" onClick={this.resume}>Resume</Button>
+                        <Button color="dark" float="left" display="inline" onClick={this.linkedin}>LinkedIn</Button>
                         <Button color="dark" float="left" display="inline" onClick={this.contact}>Contact</Button>
                         {/* <Button float="left" display="inline" onClick={this.unused}>Unused</Button> */}
                         {/* <Button float="left" color="dark" display="inline" onClick={this.changeColor}>Color</Button> */}

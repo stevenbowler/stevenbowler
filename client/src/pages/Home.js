@@ -1,6 +1,7 @@
 //@ts-check
 /**@module */
 import React from "react";
+// import "./Home.css";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import { connect } from 'react-redux';
@@ -34,7 +35,7 @@ function Home() {
             <Row>
                 <Col size="md-12">
                     <Jumbotron>
-                        <h1>Problem Solved</h1>
+                        <h1>Web Dev Simplified - Click a Burger, See a Solution</h1>
                         {/* <h1>
                             <span role="img" aria-label="Face With Rolling Eyes Emoji">
                                 🙄</span>
