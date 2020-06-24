@@ -1,3 +1,5 @@
+//@ts-check
+/**@module */
 import React, { Component, useState } from "react";
 import { bounce, pulse, zoomIn, fadeIn } from "react-animations";   // flipInX, flipInY see https://www.npmjs.com/package/react-animations
 import styled, { keyframes } from 'styled-components';
@@ -15,38 +17,32 @@ const height = "370px";
 const width = "370px";
 
 
-class AnimateBounce extends Component {
-    render() {
-        return (
-            <Bounce><a href={this.props.href}><img src={this.props.src} alt='Menu' style={{
-                color: "white",
-                height,
-                width
-            }}></img></a></Bounce>
-        );
-    }
+/** Animate bounce effect on component
+ * @function AnimateBounce
+ * @param {*} props 
+ */
+const AnimateBounce = (props) => {
+    return (
+        <Bounce><a href={this.props.href}><img src={this.props.src} alt='Menu' style={{
+            color: "white",
+            height,
+            width
+        }}></img></a></Bounce>
+    );
 }
 
-/**
- *       <Tooltip placement="right" isOpen={tooltipOpen} target="TooltipExample" toggle={toggle}>
-        Hello world!
-      </Tooltip>
- */
 
 /**Animation wobble effect from react-animations
- * @class
+ * @function AnimateZoomIn
  */
-const AnimateZoomIn = (props) => {
+const AnimateZoomIn = () => {
 
-    // setTooltipOpen = useState(false);
     const toggle = () => setTooltipOpen(!tooltipOpen);
     const [tooltipOpen, setTooltipOpen] = useState(false);
 
-    // render() {
     return (
         <ZoomIn>
             <div style={{ color: "white" }} >
-                {/* <h2>About Me</h2> */}
                 <section>
                     <img src="/IMG_3192.JPG" alt="SB photo" height="100px"
                         width="160px"></img>
@@ -69,13 +65,12 @@ const AnimateZoomIn = (props) => {
         </ZoomIn>
     );
 }
-// }
 
 
-/**Animation wobble effect from react-animations
- * @class
+/**Animate fadeIn effect from react-animations
+ * @function AnimateFadeIn
  */
-const AnimateFadeIn = (props) => {
+const AnimateFadeIn = () => {
     // render() {
     return (
         <FadeIn>
@@ -97,11 +92,13 @@ const AnimateFadeIn = (props) => {
         </FadeIn>
     );
 }
-// }
 
 
 /**Animation wobble effect from react-animations
- * @class
+ * @function AnimateWobble
+ * @param {object} props href and src
+ * @property {href} href
+ * @property {src} src
  */
 const AnimateWobble = (props) => {
 
@@ -112,7 +109,7 @@ const AnimateWobble = (props) => {
     return (
         <Wobble>
             <Tooltip placement="right" isOpen={tooltipOpen} target="TooltipWobble" toggle={toggle}>
-                Click to enter the Clicky One game.  Test your short term memory by clicking on the images, taking care
+                <strong style={{ fontSize: "larger", color: `rgb(${132}, ${31}, ${39})` }}><p>Clicky One Game</p></strong>  Test your short term memory by clicking on the images, taking care
                 not to click the same image twice, that will end the game.  Register and log in and have your scores noted
                 on the top 5 board.
             </Tooltip>
@@ -127,16 +124,18 @@ const AnimateWobble = (props) => {
 }
 
 
-
+/**Animate rotateInDownLeft effect
+ * @function AnimateRotateInDownLeft
+ * @param {*} props 
+ */
 const AnimateRotateInDownLeft = (props) => {
     const toggle = () => setTooltipOpen(!tooltipOpen);
     const [tooltipOpen, setTooltipOpen] = useState(false);
 
-    // render() {
     return (
         <RotateInDownLeft>
             <Tooltip placement="right" isOpen={tooltipOpen} target="TooltipRotateInDownLeft" toggle={toggle}>
-                Click to enter the Jiggle React Game.  Use the left/right/up/down keys to move the BlackBox around
+                <strong style={{ fontSize: "larger", color: `rgb(${132}, ${31}, ${39})` }}><p>Jiggle  React  Game</p></strong>  Use the left/right/up/down keys to move the BlackBox around
                 the Texas Longhorns colored gamespace.  Don't let the Fuel Thief touch you he will drain your fuel.
                 Stop on top of the React fuel tank as much as possible to fuel up.
             </Tooltip>
@@ -149,17 +148,20 @@ const AnimateRotateInDownLeft = (props) => {
 }
 
 
+/**Animate rotateInDownRight
+ * @function AnimateRotateInDownRight
+ * @param {*} props 
+ */
 const AnimateRotateInDownRight = (props) => {
     const toggle = () => setTooltipOpen(!tooltipOpen);
     const [tooltipOpen, setTooltipOpen] = useState(false);
 
-    // render() {
     return (
         <RotateInDownRight>
             <Tooltip placement="right" isOpen={tooltipOpen} target="TooltipRotateInDownRight" toggle={toggle}>
-                Click to enter the Google Book Search. From the home page save any notes you
+                <strong style={{ fontSize: "larger", color: `rgb(${132}, ${31}, ${39})` }}><p>Google Book Search</p></strong> From the home page save any notes you
                 wish to your Saved list. Search Google Books by entering any search string from
-                the Search page, then add a book to your Saved books.  Register and log
+                the Search page, then add a book to your Saved list.  Register and log
                 in to maintain your own personal list.
             </Tooltip>
             <a id="TooltipRotateInDownRight" href={props.href}><img src={props.src} alt='Menu' style={{
@@ -168,7 +170,6 @@ const AnimateRotateInDownRight = (props) => {
                 width
             }}></img></a></RotateInDownRight >
     )
-    // }
 }
 
 export { AnimateWobble, AnimateRotateInDownLeft, AnimateRotateInDownRight, AnimateZoomIn, AnimateFadeIn }
