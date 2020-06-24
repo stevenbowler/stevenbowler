@@ -1,3 +1,5 @@
+//@ts-check
+/**@module */
 import axios from "axios";
 import { login, loginError, toggleRegisterModal, toggleLoginModal } from '../redux/actionCreator';
 

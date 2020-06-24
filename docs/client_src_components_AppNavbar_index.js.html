@@ -47,7 +47,6 @@ import {
 import { connect } from 'react-redux';
 import {
     toggleNavbar,
-    toggleExtraModal,
     logout,
     toggleLoginModal,
     toggleRegisterModal
@@ -62,41 +61,32 @@ class AppNavbar extends Component {
         this.wrapper = React.createRef();  //  todo requires ref={this.wrapper} in navbar div to eliminate deprecation warning
     }
 
-    /**
-     * Onclick Toggle Navbar with redux call
+
+    /**Onclick Toggle Navbar with redux call
      * @function toggle
      */
     toggleNavbar = () => this.props.dispatch(toggleNavbar());
 
 
-    /**
-     * Onclick toggle ExtraModal with redux toggle
-     * @function leaderBoard
-     */
-    extraModal = () => this.props.dispatch(toggleExtraModal());
-
-
-    /**
-     * Onclick request to register
+    /**Onclick request to register
      * @function register
      */
     register = () => this.props.dispatch(toggleRegisterModal());
 
-    /**
-     * Onclick request to login
+
+    /**Onclick request to login
      * @function login
      */
     login = () => this.props.dispatch(toggleLoginModal());
 
-    /**
-     * Onclick request to logout
+
+    /**Onclick request to logout
      * @function logout
      */
     logout = () => this.props.dispatch(logout());
 
 
-    /**
-     * handle the Changecolor event from Navbar
+    /**handle the Changecolor event from Navbar
      * @function changeColor
      */
     changeColor = () => {
@@ -110,36 +100,50 @@ class AppNavbar extends Component {
     }
 
 
-    /**
-     * handle the Tutorial button event, play the tutorial for this app
+    /**handle the Features button event, play the tutorial for this app
      * @function tutorial
      */
-    tutorial = () => {
+    features = () => {
         console.log("handleTutorial");
-        window.location.href = "https://drive.google.com/file/d/1dXeXGydfJTvsE2GS7LnczJzTW0EKO-wS/view?usp=sharing";
+        // window.location.href = "https://www.linkedin.com/in/stevenbowler1";
+        window.open('https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view', '_blank');
     }
 
 
-    /**
-     * handle the About button event, show About.js page
+    /**handle the Tutorial button event, play the tutorial for this app
+     * @function tutorial
+     */
+    resume = () => {
+        console.log("handleResume");
+        window.open('https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.pdf', '_blank');
+    }
+
+
+    /**handle the Tutorial button event, play the tutorial for this app
+     * @function tutorial
+     */
+    linkedin = () => {
+        console.log("handleResume");
+        window.open('https://www.linkedin.com/in/stevenbowler1', '_blank');
+    }
+
+
+    /**handle the Contact button event, show Contact.js page
      * @function tutorial
      */
     contact = () => {
-        console.log("handleTutorial");
+        console.log("handleContact");
         window.location.href = "/contact";
     }
 
 
-    /**
-     * handle the About button event, show About.js page 
+    /**handle the About button event, show About.js page 
      * @function about
      */
     about = () => {
-        console.log("handleTutorial");
+        console.log("handleAbout");
         window.location.href = "/about";
     }
-
-
 
 
     render() {
@@ -157,9 +161,11 @@ class AppNavbar extends Component {
                         &lt;Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.register}>Register&lt;/Button>
                         &lt;Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.login}>Login&lt;/Button>
                         &lt;Button color="dark" hidden={this.props.loggedIn === "true" ? false : true} float="left" display="inline" onClick={this.logout}>Logout&lt;/Button>
+                        &lt;Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.features}>Features&lt;/Button>
                         &lt;Button color="dark" float="left" display="inline" onClick={this.about}>About&lt;/Button>
+                        &lt;Button color="dark" float="left" display="inline" onClick={this.resume}>Resume&lt;/Button>
+                        &lt;Button color="dark" float="left" display="inline" onClick={this.linkedin}>LinkedIn&lt;/Button>
                         &lt;Button color="dark" float="left" display="inline" onClick={this.contact}>Contact&lt;/Button>
-                        &lt;Button color="dark" hidden={this.props.loggedIn === "true" ? true : false} float="left" display="inline" onClick={this.tutorial}>Tutorial&lt;/Button>
                         {/* &lt;Button float="left" display="inline" onClick={this.unused}>Unused&lt;/Button> */}
                         {/* &lt;Button float="left" color="dark" display="inline" onClick={this.changeColor}>Color&lt;/Button> */}
                         &lt;NavItem>
@@ -183,8 +189,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(AppNavbar);
-// export default AppNavbar;</code></pre>
+export default connect(mapStateToProps)(AppNavbar);</code></pre>
         </article>
     </section>
 
@@ -194,13 +199,13 @@ export default connect(mapStateToProps)(AppNavbar);
 </div>
 
 <nav>
-    <h2><a href="index.html">MERNshellTwo</a></h2><h3>Modules</h3><ul><li><a href="module-client_src_App.html">client/src/App</a></li><li><a href="module-client_src_components_AppNavbar_index.html">client/src/components/AppNavbar/index</a></li><li><a href="module-client_src_components_DeleteBtn_index.html">client/src/components/DeleteBtn/index</a></li><li><a href="module-client_src_components_ExtraModal_index.html">client/src/components/ExtraModal/index</a></li><li><a href="module-client_src_components_Form_index.html">client/src/components/Form/index</a></li><li><a href="module-client_src_components_Grid_index.html">client/src/components/Grid/index</a></li><li><a href="module-client_src_components_Jumbotron_index.html">client/src/components/Jumbotron/index</a></li><li><a href="module-client_src_components_List_index.html">client/src/components/List/index</a></li><li><a href="module-client_src_components_LoginModal_index.html">client/src/components/LoginModal/index</a></li><li><a href="module-client_src_components_RegisterModal_index.html">client/src/components/RegisterModal/index</a></li><li><a href="module-client_src_pages_About.html">client/src/pages/About</a></li><li><a href="module-client_src_pages_Books.html">client/src/pages/Books</a></li><li><a href="module-client_src_pages_Contact.html">client/src/pages/Contact</a></li><li><a href="module-client_src_pages_Detail.html">client/src/pages/Detail</a></li><li><a href="module-client_src_pages_Home.html">client/src/pages/Home</a></li><li><a href="module-client_src_pages_NoMatch.html">client/src/pages/NoMatch</a></li><li><a href="module-client_src_redux_actionCreator.html">client/src/redux/actionCreator</a></li><li><a href="module-client_src_redux_actions.html">client/src/redux/actions</a></li><li><a href="module-client_src_redux_reducer.html">client/src/redux/reducer</a></li><li><a href="module-client_src_utils_API.html">client/src/utils/API</a></li><li><a href="module-client_src_utils_validationNameEmailPassword.html">client/src/utils/validationNameEmailPassword</a></li><li><a href="module-controllers_booksController.html">controllers/booksController</a></li><li><a href="module-controllers_usersController.html">controllers/usersController</a></li><li><a href="module-models_book.html">models/book</a></li><li><a href="module-models_user.html">models/user</a></li><li><a href="module-privateRoutesAuth.html">privateRoutesAuth</a></li><li><a href="module-routes_api_books.html">routes/api/books</a></li><li><a href="module-routes_api_users.html">routes/api/users</a></li><li><a href="module-server.html">server</a></li><li><a href="module-validation.html">validation</a></li></ul><h3>Namespaces</h3><ul><li><a href="module-client_src_utils_validationNameEmailPassword-emaileValidation.html">emaileValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-nameValidation.html">nameValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-passwordValidation.html">passwordValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-Validation.html">Validation</a></li><li><a href="module-controllers_usersController-create.html">create</a></li><li><a href="module-controllers_usersController-findAll.html">findAll</a></li><li><a href="module-controllers_usersController-findById.html">findById</a></li><li><a href="module-controllers_usersController-remove.html">remove</a></li><li><a href="module-controllers_usersController-update.html">update</a></li><li><a href="module-models_book-bookSchema.html">bookSchema</a></li><li><a href="module-models_user-UserSchema.html">UserSchema</a></li><li><a href="module-validation-loginValidation.html">loginValidation</a></li><li><a href="module-validation-registerValidation.html">registerValidation</a></li></ul><h3>Global</h3><ul><li><a href="global.html#handleLogin">handleLogin</a></li><li><a href="global.html#handleRegister">handleRegister</a></li></ul>
+    <h2><a href="index.html">Steven Bowler Portfolio</a></h2><h3>Modules</h3><ul><li><a href="module-client_src_App.html">client/src/App</a></li><li><a href="module-client_src_components_Animations_Animations.html">client/src/components/Animations/Animations</a></li><li><a href="module-client_src_components_AppNavbar_index.html">client/src/components/AppNavbar/index</a></li><li><a href="module-client_src_components_DeleteBtn_index.html">client/src/components/DeleteBtn/index</a></li><li><a href="module-client_src_components_ExtraModal_index.html">client/src/components/ExtraModal/index</a></li><li><a href="module-client_src_components_Form_index.html">client/src/components/Form/index</a></li><li><a href="module-client_src_components_Grid_index.html">client/src/components/Grid/index</a></li><li><a href="module-client_src_components_Jumbotron_index.html">client/src/components/Jumbotron/index</a></li><li><a href="module-client_src_components_List_index.html">client/src/components/List/index</a></li><li><a href="module-client_src_components_LoginModal_index.html">client/src/components/LoginModal/index</a></li><li><a href="module-client_src_components_RegisterModal_index.html">client/src/components/RegisterModal/index</a></li><li><a href="module-client_src_pages_About.html">client/src/pages/About</a></li><li><a href="module-client_src_pages_Books.html">client/src/pages/Books</a></li><li><a href="module-client_src_pages_Contact.html">client/src/pages/Contact</a></li><li><a href="module-client_src_pages_Detail.html">client/src/pages/Detail</a></li><li><a href="module-client_src_pages_Home.html">client/src/pages/Home</a></li><li><a href="module-client_src_pages_NoMatch.html">client/src/pages/NoMatch</a></li><li><a href="module-client_src_redux_actionCreator.html">client/src/redux/actionCreator</a></li><li><a href="module-client_src_redux_actions.html">client/src/redux/actions</a></li><li><a href="module-client_src_redux_reducer.html">client/src/redux/reducer</a></li><li><a href="module-client_src_utils_API.html">client/src/utils/API</a></li><li><a href="module-client_src_utils_userAPI.html">client/src/utils/userAPI</a></li><li><a href="module-client_src_utils_validationNameEmailPassword.html">client/src/utils/validationNameEmailPassword</a></li><li><a href="module-controllers_booksController.html">controllers/booksController</a></li><li><a href="module-controllers_usersController.html">controllers/usersController</a></li><li><a href="module-models_book.html">models/book</a></li><li><a href="module-models_user.html">models/user</a></li><li><a href="module-privateRoutesAuth.html">privateRoutesAuth</a></li><li><a href="module-routes_api_books.html">routes/api/books</a></li><li><a href="module-routes_api_users.html">routes/api/users</a></li><li><a href="module-server.html">server</a></li><li><a href="module-validation.html">validation</a></li></ul><h3>Namespaces</h3><ul><li><a href="module-client_src_utils_validationNameEmailPassword-emaileValidation.html">emaileValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-nameValidation.html">nameValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-passwordValidation.html">passwordValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-Validation.html">Validation</a></li><li><a href="module-controllers_usersController-create.html">create</a></li><li><a href="module-controllers_usersController-findAll.html">findAll</a></li><li><a href="module-controllers_usersController-findById.html">findById</a></li><li><a href="module-controllers_usersController-remove.html">remove</a></li><li><a href="module-controllers_usersController-update.html">update</a></li><li><a href="module-models_book-bookSchema.html">bookSchema</a></li><li><a href="module-models_user-UserSchema.html">UserSchema</a></li><li><a href="module-validation-loginValidation.html">loginValidation</a></li><li><a href="module-validation-registerValidation.html">registerValidation</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Mon Jun 22 2020 10:55:01 GMT-0500 (Central Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 24 2020 05:27:29 GMT-0500 (Central Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>

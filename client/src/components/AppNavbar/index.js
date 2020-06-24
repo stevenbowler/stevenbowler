@@ -19,7 +19,6 @@ import {
 import { connect } from 'react-redux';
 import {
     toggleNavbar,
-    toggleExtraModal,
     logout,
     toggleLoginModal,
     toggleRegisterModal
@@ -34,41 +33,32 @@ class AppNavbar extends Component {
         this.wrapper = React.createRef();  //  todo requires ref={this.wrapper} in navbar div to eliminate deprecation warning
     }
 
-    /**
-     * Onclick Toggle Navbar with redux call
+
+    /**Onclick Toggle Navbar with redux call
      * @function toggle
      */
     toggleNavbar = () => this.props.dispatch(toggleNavbar());
 
 
-    /**
-     * Onclick toggle ExtraModal with redux toggle
-     * @function leaderBoard
-     */
-    extraModal = () => this.props.dispatch(toggleExtraModal());
-
-
-    /**
-     * Onclick request to register
+    /**Onclick request to register
      * @function register
      */
     register = () => this.props.dispatch(toggleRegisterModal());
 
-    /**
-     * Onclick request to login
+
+    /**Onclick request to login
      * @function login
      */
     login = () => this.props.dispatch(toggleLoginModal());
 
-    /**
-     * Onclick request to logout
+
+    /**Onclick request to logout
      * @function logout
      */
     logout = () => this.props.dispatch(logout());
 
 
-    /**
-     * handle the Changecolor event from Navbar
+    /**handle the Changecolor event from Navbar
      * @function changeColor
      */
     changeColor = () => {
@@ -82,8 +72,7 @@ class AppNavbar extends Component {
     }
 
 
-    /**
-     * handle the Tutorial button event, play the tutorial for this app
+    /**handle the Features button event, play the tutorial for this app
      * @function tutorial
      */
     features = () => {
@@ -92,8 +81,8 @@ class AppNavbar extends Component {
         window.open('https://drive.google.com/file/d/19hRCxb8lc9-FNAyar4q8ZkUyqtEJ1loe/view', '_blank');
     }
 
-    /**
-     * handle the Tutorial button event, play the tutorial for this app
+
+    /**handle the Tutorial button event, play the tutorial for this app
      * @function tutorial
      */
     resume = () => {
@@ -101,8 +90,8 @@ class AppNavbar extends Component {
         window.open('https://stevenbowler.github.io/stevenbowler/client/public/StevenBowlerResume.pdf', '_blank');
     }
 
-    /**
-     * handle the Tutorial button event, play the tutorial for this app
+
+    /**handle the Tutorial button event, play the tutorial for this app
      * @function tutorial
      */
     linkedin = () => {
@@ -110,8 +99,8 @@ class AppNavbar extends Component {
         window.open('https://www.linkedin.com/in/stevenbowler1', '_blank');
     }
 
-    /**
-     * handle the About button event, show About.js page
+
+    /**handle the Contact button event, show Contact.js page
      * @function tutorial
      */
     contact = () => {
@@ -120,16 +109,13 @@ class AppNavbar extends Component {
     }
 
 
-    /**
-     * handle the About button event, show About.js page 
+    /**handle the About button event, show About.js page 
      * @function about
      */
     about = () => {
         console.log("handleAbout");
         window.location.href = "/about";
     }
-
-    //www.linkedin.com/in/stevenbowler1
 
 
     render() {
@@ -176,4 +162,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(AppNavbar);
-// export default AppNavbar;

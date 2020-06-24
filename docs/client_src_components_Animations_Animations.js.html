@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: client/src/components/Animations/Animations.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: client/src/components/Animations/Animations.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>//@ts-check
+/**@module */
+import React, { Component, useState } from "react";
+import { bounce, pulse, zoomIn, fadeIn } from "react-animations";   // flipInX, flipInY see https://www.npmjs.com/package/react-animations
+import styled, { keyframes } from 'styled-components';
+import { Tooltip } from "reactstrap";
+import './style.css';
+
+
+const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`} infinite`;
+const ZoomIn = styled.div`animation: 3s ${keyframes`${zoomIn}`}`;
+const FadeIn = styled.div`animation: 3s ${keyframes`${fadeIn}`}`;
+const Wobble = styled.div`animation: 3s ${keyframes`${pulse}`} infinite`;
+const RotateInDownLeft = styled.div`animation: 4.6s ${keyframes`${pulse}`} infinite`;
+const RotateInDownRight = styled.div`animation: 7.7s ${keyframes`${pulse}`} infinite`;
+const height = "370px";
+const width = "370px";
+
+
+/** Animate bounce effect on component
+ * @function AnimateBounce
+ * @param {*} props 
+ */
+const AnimateBounce = (props) => {
+    return (
+        &lt;Bounce>&lt;a href={this.props.href}>&lt;img src={this.props.src} alt='Menu' style={{
+            color: "white",
+            height,
+            width
+        }}>&lt;/img>&lt;/a>&lt;/Bounce>
+    );
+}
+
+
+/**Animation wobble effect from react-animations
+ * @function AnimateZoomIn
+ */
+const AnimateZoomIn = () => {
+
+    const toggle = () => setTooltipOpen(!tooltipOpen);
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+
+    return (
+        &lt;ZoomIn>
+            &lt;div style={{ color: "white" }} >
+                &lt;section>
+                    &lt;img src="/IMG_3192.JPG" alt="SB photo" height="100px"
+                        width="160px">&lt;/img>
+                    &lt;p >&lt;strong> Husband to Laura, father to Alan and Eva - and we have 7
+                    dogs too.&lt;/strong>
+                    &lt;/p>&lt;br>&lt;/br>
+                    &lt;p >I offer, proven project management and technical skill, leadership, good communication, and above all, a successful addition to your team.
+                    &lt;/p>&lt;br>&lt;/br>
+                    &lt;p > Starting January 2020 I am enrolled in both: Masters
+                    Science in Information Technology at University of Texas Rio Grande Valley; and, the Coding Bootcamp
+                    program at University
+                    of Texas Austin. Professional development in these areas will complement my hands-on experience and
+                    enable me to provide good solutions to business problems.
+                    &lt;/p>&lt;br>&lt;/br>
+                    &lt;p > There are significant opportunities to solve customer or issues
+                    through project management and software development.
+                    &lt;/p>&lt;br>&lt;/br>
+                &lt;/section>
+            &lt;/div>
+        &lt;/ZoomIn>
+    );
+}
+
+
+/**Animate fadeIn effect from react-animations
+ * @function AnimateFadeIn
+ */
+const AnimateFadeIn = () => {
+    // render() {
+    return (
+        &lt;FadeIn>
+            &lt;div style={{ color: "white", marginLeft: "100px", fontSize: "1.5em" }}>
+                {/* &lt;h2>About Me&lt;/h2> */}
+                &lt;section>
+
+                    &lt;p >&lt;strong> Best way to contact me is to text your name to 1-956-792-4128&lt;/strong>&lt;/p>
+                    &lt;p >Alternatively of course, call the same number.&lt;/p>
+                    &lt;p >Or send an email to stevenbowler@yahoo.com&lt;/p>
+                    &lt;p >It will be my pleasure to help you and your team reach your goals.&lt;/p>
+                    &lt;p >Sincerely, &lt;/p>
+                    &lt;p >Steven Bowler&lt;/p>
+                    &lt;p >stevenbowler@yahoo.com&lt;/p>
+                    &lt;p >1-956-792-4128&lt;/p>
+                    &lt;br>&lt;/br>
+                &lt;/section>
+            &lt;/div>
+        &lt;/FadeIn>
+    );
+}
+
+
+/**Animation wobble effect from react-animations
+ * @function AnimateWobble
+ * @param {object} props href and src
+ * @property {href} href
+ * @property {src} src
+ */
+const AnimateWobble = (props) => {
+
+    const toggle = () => setTooltipOpen(!tooltipOpen);
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+
+    // render() {
+    return (
+        &lt;Wobble>
+            &lt;Tooltip placement="right" isOpen={tooltipOpen} target="TooltipWobble" toggle={toggle}>
+                &lt;strong style={{ fontSize: "larger", color: `rgb(${132}, ${31}, ${39})` }}>&lt;p>Clicky One Game&lt;/p>&lt;/strong>  Test your short term memory by clicking on the images, taking care
+                not to click the same image twice, that will end the game.  Register and log in and have your scores noted
+                on the top 5 board.
+            &lt;/Tooltip>
+            &lt;a id="TooltipWobble" href={props.href}>&lt;img src={props.src} alt='Menu' style={{
+                height,
+                width
+            }}>&lt;/img>
+            &lt;/a>
+        &lt;/Wobble>
+    )
+    // {/* } */ }
+}
+
+
+/**Animate rotateInDownLeft effect
+ * @function AnimateRotateInDownLeft
+ * @param {*} props 
+ */
+const AnimateRotateInDownLeft = (props) => {
+    const toggle = () => setTooltipOpen(!tooltipOpen);
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+
+    return (
+        &lt;RotateInDownLeft>
+            &lt;Tooltip placement="right" isOpen={tooltipOpen} target="TooltipRotateInDownLeft" toggle={toggle}>
+                &lt;strong style={{ fontSize: "larger", color: `rgb(${132}, ${31}, ${39})` }}>&lt;p>Jiggle  React  Game&lt;/p>&lt;/strong>  Use the left/right/up/down keys to move the BlackBox around
+                the Texas Longhorns colored gamespace.  Don't let the Fuel Thief touch you he will drain your fuel.
+                Stop on top of the React fuel tank as much as possible to fuel up.
+            &lt;/Tooltip>
+
+            &lt;a id="TooltipRotateInDownLeft" style={{ color: "white" }} href={props.href}>&lt;img src={props.src} alt='Menu' style={{
+                height,
+                width
+            }}>&lt;/img>&lt;/a>&lt;/RotateInDownLeft>
+    )
+}
+
+
+/**Animate rotateInDownRight
+ * @function AnimateRotateInDownRight
+ * @param {*} props 
+ */
+const AnimateRotateInDownRight = (props) => {
+    const toggle = () => setTooltipOpen(!tooltipOpen);
+    const [tooltipOpen, setTooltipOpen] = useState(false);
+
+    return (
+        &lt;RotateInDownRight>
+            &lt;Tooltip placement="right" isOpen={tooltipOpen} target="TooltipRotateInDownRight" toggle={toggle}>
+                &lt;strong style={{ fontSize: "larger", color: `rgb(${132}, ${31}, ${39})` }}>&lt;p>Google Book Search&lt;/p>&lt;/strong> From the home page save any notes you
+                wish to your Saved list. Search Google Books by entering any search string from
+                the Search page, then add a book to your Saved list.  Register and log
+                in to maintain your own personal list.
+            &lt;/Tooltip>
+            &lt;a id="TooltipRotateInDownRight" href={props.href}>&lt;img src={props.src} alt='Menu' style={{
+                color: "white",
+                height,
+                width
+            }}>&lt;/img>&lt;/a>&lt;/RotateInDownRight >
+    )
+}
+
+export { AnimateWobble, AnimateRotateInDownLeft, AnimateRotateInDownRight, AnimateZoomIn, AnimateFadeIn }
+
+
+
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Steven Bowler Portfolio</a></h2><h3>Modules</h3><ul><li><a href="module-client_src_App.html">client/src/App</a></li><li><a href="module-client_src_components_Animations_Animations.html">client/src/components/Animations/Animations</a></li><li><a href="module-client_src_components_AppNavbar_index.html">client/src/components/AppNavbar/index</a></li><li><a href="module-client_src_components_DeleteBtn_index.html">client/src/components/DeleteBtn/index</a></li><li><a href="module-client_src_components_ExtraModal_index.html">client/src/components/ExtraModal/index</a></li><li><a href="module-client_src_components_Form_index.html">client/src/components/Form/index</a></li><li><a href="module-client_src_components_Grid_index.html">client/src/components/Grid/index</a></li><li><a href="module-client_src_components_Jumbotron_index.html">client/src/components/Jumbotron/index</a></li><li><a href="module-client_src_components_List_index.html">client/src/components/List/index</a></li><li><a href="module-client_src_components_LoginModal_index.html">client/src/components/LoginModal/index</a></li><li><a href="module-client_src_components_RegisterModal_index.html">client/src/components/RegisterModal/index</a></li><li><a href="module-client_src_pages_About.html">client/src/pages/About</a></li><li><a href="module-client_src_pages_Books.html">client/src/pages/Books</a></li><li><a href="module-client_src_pages_Contact.html">client/src/pages/Contact</a></li><li><a href="module-client_src_pages_Detail.html">client/src/pages/Detail</a></li><li><a href="module-client_src_pages_Home.html">client/src/pages/Home</a></li><li><a href="module-client_src_pages_NoMatch.html">client/src/pages/NoMatch</a></li><li><a href="module-client_src_redux_actionCreator.html">client/src/redux/actionCreator</a></li><li><a href="module-client_src_redux_actions.html">client/src/redux/actions</a></li><li><a href="module-client_src_redux_reducer.html">client/src/redux/reducer</a></li><li><a href="module-client_src_utils_API.html">client/src/utils/API</a></li><li><a href="module-client_src_utils_userAPI.html">client/src/utils/userAPI</a></li><li><a href="module-client_src_utils_validationNameEmailPassword.html">client/src/utils/validationNameEmailPassword</a></li><li><a href="module-controllers_booksController.html">controllers/booksController</a></li><li><a href="module-controllers_usersController.html">controllers/usersController</a></li><li><a href="module-models_book.html">models/book</a></li><li><a href="module-models_user.html">models/user</a></li><li><a href="module-privateRoutesAuth.html">privateRoutesAuth</a></li><li><a href="module-routes_api_books.html">routes/api/books</a></li><li><a href="module-routes_api_users.html">routes/api/users</a></li><li><a href="module-server.html">server</a></li><li><a href="module-validation.html">validation</a></li></ul><h3>Namespaces</h3><ul><li><a href="module-client_src_utils_validationNameEmailPassword-emaileValidation.html">emaileValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-nameValidation.html">nameValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-passwordValidation.html">passwordValidation</a></li><li><a href="module-client_src_utils_validationNameEmailPassword-Validation.html">Validation</a></li><li><a href="module-controllers_usersController-create.html">create</a></li><li><a href="module-controllers_usersController-findAll.html">findAll</a></li><li><a href="module-controllers_usersController-findById.html">findById</a></li><li><a href="module-controllers_usersController-remove.html">remove</a></li><li><a href="module-controllers_usersController-update.html">update</a></li><li><a href="module-models_book-bookSchema.html">bookSchema</a></li><li><a href="module-models_user-UserSchema.html">UserSchema</a></li><li><a href="module-validation-loginValidation.html">loginValidation</a></li><li><a href="module-validation-registerValidation.html">registerValidation</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.4</a> on Wed Jun 24 2020 05:27:29 GMT-0500 (Central Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

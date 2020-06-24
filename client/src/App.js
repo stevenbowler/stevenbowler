@@ -2,37 +2,38 @@
 /**@module 
  * @requires react
  * @requires react-router-dom
- * @requires module:client/src/pages/Books
- * @requires module:client/src/pages/Detail
- * @requires module:client/src/pages/NoMatch
  * @requires bootstrap
  * @requires axios
- * @requires module:client/src/components/AppNavbar
- * @requires module:client/src/components/LoginRegisterModals
- * @requires module:client/src/components/ExtraModal
  * @requires react-redux
  * @requires redux
  * @requires redux-devtools-extension
+ * @requires module:client/src/pages/Books
+ * @requires module:client/src/pages/Detail
+ * @requires module:client/src/pages/NoMatch
+ * @requires module:client/src/components/AppNavbar/index
+ * @requires module:client/src/components/RegisterModal/index
+ * @requires module:client/src/components/LoginModal/index
+ * @requires module:client/src/components/ExtraModal/index
 */
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { connect } from 'react-redux';
+import { resetUser, login } from './redux/actionCreator';
+
 import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Home from "./pages/Home";
-// import Nav from "./components/Nav";  // was in original Week 20 Activity 11
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-//import { Container } from 'reactstrap';   // was used in origial MERNshell
 import AppNavbar from './components/AppNavbar';
 import RegisterModal from './components/RegisterModal';
 import LoginModal from './components/LoginModal';
 import ExtraModal from './components/ExtraModal';
-import { connect } from 'react-redux';
-import { resetUser, login } from './redux/actionCreator';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 
 

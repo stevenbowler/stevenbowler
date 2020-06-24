@@ -1,5 +1,21 @@
+/* a:link {
+  color: black;
+}
+
+a:visited {
+  color: green;
+}  */
+
+a:hover, .burger:hover {
+  width: "200px";
+  height: "200px";
+}
+/* 
+a:active {
+  color: blue;
+} */
+
 .delete-btn {
-  float: right;
   color: #e74944;
 }
 
